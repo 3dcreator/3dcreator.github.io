@@ -2,13 +2,13 @@
 
 	Theme Name: Rooky
 
-	Template URI: 
+	Template URI:
 
-	Description: 
+	Description:
 
 	Author:
 
-	Author URI: 
+	Author URI:
 
 	License: GNU General Public License version 3.0
 
@@ -16,7 +16,7 @@
 
 	Version: 1.0
 
-	
+
 
 	1. Header
 
@@ -56,7 +56,7 @@
 
 	10. Footer
 
-		
+
 
 */
 
@@ -505,6 +505,14 @@ border-bottom-right-radius: 3px;}
 .contact-form input[type="submit"]{ height:63px; font-size:16px; text-transform:uppercase; color:#FFF; text-align:center; display:block; background-color:#6bb551; padding:0 53px; border-radius:3px; margin:40px auto; border-bottom:1px solid #89c474}
 
 .contact-form input[type="submit"]:hover{ background-color:#84cf6a}
+
+.qr-code {text-align:center; display: block;}
+
+.contact-me {color: #8f8f8f; font-size: 22px; padding-left: 200px; display:block; }
+
+
+
+#
 
 /* Map */
 
