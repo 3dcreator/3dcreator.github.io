@@ -506,11 +506,9 @@ border-bottom-right-radius: 3px;}
 
 .contact-form input[type="submit"]:hover{ background-color:#84cf6a}
 
-.qr-code {text-align:center; display: block;}
+.contact-me {text-align: left; color: #8f8f8f; font-size: 22px; padding-left: 200px; display:block; }
 
-.contact-me {color: #8f8f8f; font-size: 22px; padding-left: 200px; display:block; }
-
-
+.qr-code {text-align:center;}
 
 #
 
