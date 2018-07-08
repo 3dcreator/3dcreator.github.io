@@ -1,6 +1,6 @@
 // When the DOM is ready, run this function
 $(document).ready(function() {
-  
+
   //#HEADER
 	var slideHeight = $(window).height();
 	$('#headere-top figure .item').css('height',slideHeight);
@@ -8,38 +8,38 @@ $(document).ready(function() {
 	$(window).resize(function(){'use strict',
 		$('#headere-top figure .item').css('height',slideHeight);
 	});
-  
-  
-  
+
+
+
   //Scroll Menu
 	$(window).on('scroll', function(){
 		if( $(window).scrollTop()>600 ){
 			$('.header-top .header-fixed-wrapper').addClass('navbar-fixed-top animated fadeInDown');
-			
+
 		} else {
 			$('.header-top .header-fixed-wrapper').removeClass('navbar-fixed-top animated fadeInDown');
 		}
 	});
-	
-	
-	 $(window).scroll(function(){                          
+
+
+	 $(window).scroll(function(){
             if ($(this).scrollTop() > 200) {
                 $('#menu').fadeIn(500);
             } else {
                 $('#menu').fadeOut(500);
             }
         });
-	
+
 	// Navigation Scroll
 	$(window).scroll(function(event) {
 		Scroll();
 	});
 
-	$('.navbar-collapse ul li a').on('click', function() {  
+	$('.navbar-collapse ul li a').on('click', function() {
 		$('html, body').animate({scrollTop: $(this.hash).offset().top - 1}, 1000);
 		return false;
 	});
-	
+
 	// User define function
 	function Scroll() {
 		var contentTop      =   [];
@@ -55,11 +55,11 @@ $(document).ready(function() {
 			if ( winTop > contentTop[i] - rangeTop ){
 				$('.navbar-collapse li.scroll')
 				.removeClass('active')
-				.eq(i).addClass('active');			
+				.eq(i).addClass('active');
 			}
 		})
 	};
-  
+
   // affix
   var width = $(window).width();
   var top = $('.tp-banner-container').length == 0 ? -1 : $('.section-one').offset().top - $('.navbar').height() * 2;
@@ -71,11 +71,11 @@ $(document).ready(function() {
       }
     }
   });
-  
+
   var owl = $("#owl-demo");
 
       owl.owlCarousel({
-        
+
         itemsCustom : [
           [0, 1],
           [450, 1],
@@ -90,8 +90,8 @@ $(document).ready(function() {
 		autoPlay : 3000,
 
       });
-	  
-	  
+
+
 	  $('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
           disableOn: 700,
           type: 'iframe',
@@ -101,5 +101,41 @@ $(document).ready(function() {
 
           fixedContentPos: false
         });
-  
+
+});
+
+// Модальное окно
+
+// открыть по кнопке
+$('.js-button-campaign').click(function() {
+
+	$('.js-overlay-campaign').fadeIn();
+	$('.js-overlay-campaign').addClass('disabled');
+});
+
+// закрыть на крестик
+$('.js-close-campaign').click(function() {
+	$('.js-overlay-campaign').fadeOut();
+
+});
+
+// закрыть по клику вне окна
+$(document).mouseup(function (e) {
+	var popup = $('.js-popup-campaign');
+	if (e.target!=popup[0]&&popup.has(e.target).length === 0){
+		$('.js-overlay-campaign').fadeOut();
+
+	}
+});
+
+// открыть по таймеру
+$(window).on('load', function () {
+	setTimeout(function(){
+		if($('.js-overlay-campaign').hasClass('disabled')) {
+			return false;
+		} else {
+
+			$(".js-overlay-campaign").fadeIn();
+		}
+	}, 5000);
 });
